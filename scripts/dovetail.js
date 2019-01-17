@@ -52,13 +52,21 @@ for (button of allButtons) {
                 return parseInt(event.target.id) === product.id
             })
 
+            const shoppingCartItems = shoppingCart.find((product) => {
+                return parseInt(event.target.id) === product.id
+            })
+
             // Only if something was found, add the object to the
-            // shopping cart array
-            if (foundProduct !== null) {
+            // shopping cart array      
+            if (foundProduct !== null && foundProduct !== shoppingCartItems) {
+                foundProduct.quantity = 1        
                 shoppingCart.push(foundProduct)
                 displayShoppingCart()
+            } else {
+                foundProduct.quantity++
+                foundProduct.price += foundProduct.price
+                displayShoppingCart()
             }
-
         }
     )
 

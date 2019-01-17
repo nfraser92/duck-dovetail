@@ -9,13 +9,14 @@ const displayShoppingCart = () => {
     shoppingCart.forEach((product, idx) => {
 
         cartEl.innerHTML +=
-        `
+            `
         <section class="shoppingCart__item">
         <div>${product.name}</div>
+        <div>Quanity:${product.quantity}</div>
         <div>${product.price.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD"
-        })}</div>
+                style: "currency",
+                currency: "USD"
+            })}</div>
 
         <button id="${idx}" class="cart_removeButton">Remove</button>
         </section>
@@ -44,7 +45,6 @@ const displayShoppingCart = () => {
                 displayShoppingCart()
             }
         )
-
     }
 }
 
