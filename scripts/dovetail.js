@@ -57,8 +57,7 @@ for (button of allButtons) {
                 return parseInt(event.target.id) === product.id
             })
 
-            // Only if something was found, add the object to the
-            // shopping cart array      
+            // Only if something was found, add the object to the shopping cart array      
             if (foundProduct !== null && foundProduct !== shoppingCartItems) {
             // Increase quantity in shoping cart by 1, if it does not yet already exist in the shopping cart 
                 foundProduct.quantity = 1
