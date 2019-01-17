@@ -61,16 +61,15 @@ for (button of allButtons) {
             if (foundProduct !== null && foundProduct !== shoppingCartItems) {
                 foundProduct.quantity = 1        
                 shoppingCart.push(foundProduct)
-                displayShoppingCart()
             } else {
                 foundProduct.quantity++
-                foundProduct.price += foundProduct.price
-                displayShoppingCart()
-            }
+                foundProduct.price += foundProduct.price       
+          }
+        displayShoppingCart()
         }
     )
-
 }
+
 
 
 
