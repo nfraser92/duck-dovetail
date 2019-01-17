@@ -8,11 +8,12 @@ const displayShoppingCart = () => {
 
     shoppingCart.forEach((product, idx) => {
 
+    /* Create new quantity div (line 16) in the shopping cart section */  
         cartEl.innerHTML +=
             `
         <section class="shoppingCart__item">
         <div>${product.name}</div>
-        <div>Quanity:${product.quantity}</div>
+        <div>Quanity:${product.quantity}</div>       
         <div>${product.price.toLocaleString("en-US", {
                 style: "currency",
                 currency: "USD"
