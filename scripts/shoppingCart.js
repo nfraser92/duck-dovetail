@@ -8,7 +8,7 @@ const displayShoppingCart = () => {
 
     shoppingCart.forEach((product, idx) => {
 
-    /* Create new quantity div (line 16) in the shopping cart section */  
+        /* Create new quantity div (line 16) in the shopping cart section */
         cartEl.innerHTML +=
             `
         <section class="shoppingCart__item">
@@ -44,15 +44,15 @@ const displayShoppingCart = () => {
                 const indexToRemove = parseInt(event.target.id)
                 const currentProduct = shoppingCart[indexToRemove]
                 if (currentProduct.quantity > 1) {
-                    currentProduct.quantity --
+                    currentProduct.quantity--
                     displayShoppingCart()
-                } else { 
-                currentProduct.quantity = 1
-                shoppingCart.splice(indexToRemove, 1)
-                displayShoppingCart()
+                } else {
+                    currentProduct.quantity = 1
+                    shoppingCart.splice(indexToRemove, 1)
+                    displayShoppingCart()
                 }
             }
-            )
+        )
     }
 }
 
