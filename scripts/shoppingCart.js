@@ -42,10 +42,17 @@ const displayShoppingCart = () => {
             "click",
             (event) => {
                 const indexToRemove = parseInt(event.target.id)
+                const currentProduct = shoppingCart[indexToRemove]
+                if (currentProduct.quantity > 1) {
+                    currentProduct.quantity --
+                    displayShoppingCart()
+                } else { 
+                currentProduct.quantity = 1
                 shoppingCart.splice(indexToRemove, 1)
                 displayShoppingCart()
+                }
             }
-        )
+            )
     }
 }
 
